@@ -1,0 +1,23 @@
+How to set multiple remote repositories for the same project? Explain the
+use case. you should have a working demo of it.
+Ans: To get started we will first fork and clone the main repo so that we have
+     our own version to work on and test things out before we submit changes
+     to the main repo.Open the GitHub page of the repository that you want to
+     work on and click on "Fork" in the top right corner. Select the account
+     where you would like to fork to.Now that you have a local copy of your
+     fork, "change directory" to the cloned directory.By default, cloning a
+     repository will set the URL of that repository as the 'origin' remote.
+     Let's confirm that by listing all configured remotes:git remote -v lists
+     all configured remotes where git remote get-url origin shows the URL of
+     the remote named 'origin'.
+     Now we want to configure the 'main' repo, from which we forked, as the
+    'upstream' remote.First, let's check if the name 'upstream' is available
+     by getting the URL for 'upstream'To configure the upstream remote we will
+     use the git remote add upstream https://main-repo-url.git command.
+     To update the name of an existing remote use the command git remote
+     set-url upstream https://new-url.git where 'upstream' is the name of the
+     remote that you want to edit. To remove a remote completely use the
+     command git remote remove upstream where 'upstream' is the name of the
+     remote that you want to remove.Now, let's confirm that we have two 
+     remotes configured one for our fork called 'origin' and one for the main
+     repo called 'upstream'.
